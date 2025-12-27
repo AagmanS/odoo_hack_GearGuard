@@ -227,8 +227,6 @@ See [COST_CALCULATION.md](docs/COST_CALCULATION.md) for information about the do
 3. Make your changes
 4. Submit a pull request
 
-## License
-This project is licensed under the MIT License.
-=======
+
 # odoo_hack_GearGuard
->>>>>>> ca932bf726abda891038d53a58ee256e7eb6cfab
+
