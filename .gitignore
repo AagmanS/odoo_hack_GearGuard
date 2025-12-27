@@ -51,3 +51,72 @@ Thumbs.db
 # Temporary files
 tmp/
 temp/
+
+# Sensitive files
+.env*
+!.env.example
+config/
+config.*
+secrets/
+keys/
+*.key
+*.pem
+*.crt
+*.cert
+*.p12
+*.pfx
+
+# Authentication and security
+*.token
+.token
+auth/
+credentials/
+passwords/
+
+# Logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# Production builds
+/dist
+/build
+
+# Cache directories
+.cache/
+.nyc_output/
+.npm/
+
+# Process files
+*.pid
+pids/
+
+# Backup files
+*.bak
+*.backup
+*.old
+*.orig
+
+# PostgreSQL
+*.dump
+pgdata/
+
+# Docker
+.dockerignore
+
+# Vite
+.vite/
+
+# IDE and editor files
+.vs/
+.project
+.c9/
+*.tmproj
+*.sublime-project
+*.sublime-workspace
