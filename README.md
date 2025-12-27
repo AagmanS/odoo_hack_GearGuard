@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Gear-Guard
 
 Gear-Guard is a comprehensive equipment management system with downtime cost calculation and human impact assessment. The application helps organizations track equipment, manage maintenance requests, and understand the financial and human impact of equipment downtime.
@@ -229,3 +230,6 @@ See [COST_CALCULATION.md](docs/COST_CALCULATION.md) for information about the do
 
 ## License
 This project is licensed under the MIT License.
+=======
+# odoo_hack_GearGuard
+>>>>>>> ca932bf726abda891038d53a58ee256e7eb6cfab
