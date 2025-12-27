@@ -1,0 +1,71 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: gear_guard_backend
+    ports:
+      - "5000:5000"
+    environment:
+      - NODE_ENV=production
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_NAME=gear_guard
+      - DB_USER=postgres
+      - DB_PASSWORD=password
+    depends_on:
+      - postgres
+    networks:
+      - gear_guard_network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: gear_guard_frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    networks:
+      - gear_guard_network
+
+  postgres:
+    image: postgres:13
+    container_name: gear_guard_db
+    environment:
+      POSTGRES_DB: gear_guard
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./backend/migrations:/docker-entrypoint-initdb.d
+    networks:
+      - gear_guard_network
+
+  adminer:
+    image: adminer
+    container_name: gear_guard_adminer
+    ports:
+      - "8080:8080"
+    environment:
+      ADMINER_DEFAULT_DB_DRIVER: pgsql
+      ADMINER_DEFAULT_DB_HOST: postgres
+      ADMINER_DEFAULT_DB_NAME: gear_guard
+      ADMINER_DEFAULT_DB_USER: postgres
+      ADMINER_DEFAULT_DB_PASSWORD: password
+    depends_on:
+      - postgres
+    networks:
+      - gear_guard_network
+
+volumes:
+  postgres_data:
+
+networks:
+  gear_guard_network:
+    driver: bridge
