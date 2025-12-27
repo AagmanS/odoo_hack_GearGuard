@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Gear-Guard
 
 Gear-Guard is a comprehensive equipment management system with downtime cost calculation and human impact assessment. The application helps organizations track equipment, manage maintenance requests, and understand the financial and human impact of equipment downtime.
